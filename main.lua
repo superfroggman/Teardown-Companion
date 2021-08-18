@@ -35,6 +35,13 @@ function tick()
 	else
 		pos = VecAdd(pos, VecScale(VecSub(playerPositions[amountWrong+1],pos), 1/amountWrong))
 	end
+
+	
+	--Set position to always be on the ground
+	local hit, d = QueryRaycast(VecAdd(pos, Vec(0, 0.75, 0)), Vec(0, -1, 0), 10)
+	if hit then
+		pos = VecAdd(pos, Vec(0, 1.2-d, 0))
+	end
 	
 	--Draw sprite
 	local t = Transform(VecAdd(pos, Vec(0, 0.5, 0)),  GetPlayerTransform().rot)
