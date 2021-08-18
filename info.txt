@@ -1,0 +1,3 @@
+name = Companion Dog
+author = Superfroggman
+description = Gives you a companion
