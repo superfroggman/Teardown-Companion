@@ -47,6 +47,14 @@ function tick()
 	local t = Transform(VecAdd(pos, Vec(0, 0.5, 0)),  GetPlayerTransform().rot)
 	DrawSprite(sprite, t, 2, 2, 1, 1, 1, 1, true)
 
+	--Set position next to you if in a vehicle
+	local vehicle = GetPlayerVehicle()
+	if vehicle ~= 0 then
+		if VecLength(VecSub(pos, GetVehicleTransform(vehicle).pos)) < 5 then
+			pos = VecAdd(playerPositions[stepAmount], Vec(0,-2,0))
+		end
+	end
+
 	for i = 1, stepAmount, 1 do
 		DebugCross(playerPositions[i])
 	end
