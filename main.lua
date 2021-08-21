@@ -54,10 +54,6 @@ function tick()
 			pos = VecAdd(playerPositions[stepAmount], Vec(0,-2,0))
 		end
 	end
-
-	for i = 1, stepAmount, 1 do
-		DebugCross(playerPositions[i])
-	end
 end
 
 
