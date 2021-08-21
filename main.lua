@@ -47,6 +47,9 @@ function tick()
 	local t = Transform(VecAdd(pos, Vec(0, 0.5, 0)),  GetPlayerTransform().rot)
 	DrawSprite(sprite, t, 2, 2, 1, 1, 1, 1, true)
 
+	for i = 1, stepAmount, 1 do
+		DebugCross(playerPositions[i])
+	end
 end
 
 
